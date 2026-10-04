@@ -1,0 +1,3 @@
+// Envolve uma função async para que erros cheguem ao middleware de erro.
+module.exports = (fn) => (req, res, next) =>
+  Promise.resolve(fn(req, res, next)).catch(next);
